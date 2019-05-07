@@ -7,11 +7,11 @@
 			<a class="green fr more" href="org-detail-course.html">查看更多  >  </a>
 		</div>
 		<div class="brief group_list">
-            {% for course in all_courses %}
+            {% for course in courses %}
                 <div class="module1_5 box">
-                    <a href="{% url 'course:course_detail' course.id %}"><img width="214" src="{{ MEDIA_URL }}{{ course.image }}"/></a>
+                    <a href=""><img width="214" src="{{ MEDIA_URL }}{{ course.image }}"/></a>
                     <div class="des">
-                        <a href="{% url 'course:course_detail' course.id %}"><h2>{{ course.name }}</h2></a>
+                        <a href=""><h2>{{ course.name }}</h2></a>
                         <span class="fl">课时：<i class="key">{{ course.learn_times }}</i></span>
                         <span class="fr">参加人数：{{ course.students }}</span>
                     </div>
@@ -32,7 +32,7 @@
         <h1>机构教师</h1>
         <a class="green fr more" href="org-detail-teachers.html">查看更多  >  </a>
     </div>
-    {% for teacher in all_teachers %}
+    {% for teacher in teachers %}
     <div class="diarys">
         <div class="module5 share company-diary-box" style="padding:10px 0;">
             <div class="left">
@@ -42,8 +42,7 @@
             <div class="right">
                 <div class="top">
                     <div class="fl">
-                        <a href=""><h1>java开发教程</h1></a>
-                        <span>发表于：2015-10-12</span>
+
                     </div>
                 </div>
                 <div class="middle" style="border-bottom:0;">课程介绍</div>

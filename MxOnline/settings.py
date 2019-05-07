@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'captcha',
+    'pure_pagination',
 ]
 AUTH_USER_MODEL = "users.UserProfile"
 
@@ -78,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.media',
             ],
         },
     },
@@ -104,8 +106,8 @@ DATABASES = {
         'PASSWORD': "huang",
         'HOST': "127.0.0.1",
         'PORT': '3306',
-        'OPTIONS':{
-        "init_command": "SET foreign_key_checks = 0;",
+        'OPTIONS': {
+            "init_command": "SET foreign_key_checks = 0;",
         }
     }
 }
@@ -145,15 +147,18 @@ USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-#STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+# STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-EMAIL_HOST = ""
+EMAIL_HOST = "smtp.sina.com"
 EMAIL_PORT = 25
-EMAIL_HOST_USER =""
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_USER = "mxzaixian@sina.com"
+EMAIL_HOST_PASSWORD = "huang666"
 EMAIL_USE_TLS = False
-EMAIL_FROM = ""
+EMAIL_FROM = "mxzaixian@sina.com"
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
